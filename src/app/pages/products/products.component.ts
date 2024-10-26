@@ -10,4 +10,6 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductsComponent {
 title = "Bienvenido a Productos en Angular 18 y Bootstrap."
+
+
 }

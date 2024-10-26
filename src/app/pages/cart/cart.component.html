@@ -1,1 +1,93 @@
-<p>cart works!</p>
+<div class="containe-fluid my-4 ms-3">
+  <div class="row">
+    <!-- tabla y sus columnas -->
+    <div class="col-md-8">
+      <h4>Employee List</h4>
+      <table class="table table-bordered table-striped" style="margin-right: 10px">
+        <thead>
+          <tr>
+             <!-- nombres en la tabla-->
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact No</th>
+            <th scope="col">Email Id</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody> <!-- usar ng para la lista de empleados, usar i como index -->
+          <tr *ngFor="let item of employeeList; let i = index" class="table-primary">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.emailId }}</td>
+            <td class="text-center">
+              <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>
+              <button class="btn btn-danger mx-2" (click)="onDelete(item.empId)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Form Column -->
+    <div class="col-md-4" [formGroup]="employeeForm">
+      <h4>Add Employee</h4>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control" id="name">
+          <div class="text-danger">
+            @if(employeeForm.controls['name'].touched){
+              @if(employeeForm.controls['name'].errors?.['required']){
+                <span>Name is required </span>
+              }
+            }
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email-Id</label>
+          <input type="email" formControlName="emailId" class="form-control" id="email"> <!-- Control de la forma por emailId-->
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Contact No</label>
+          <input type="text" formControlName="phone" class="form-control" id="phone"><!-- Control de la forma por phone-->
+        </div>
+        <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text" formControlName="city" class="form-control" id="city">
+        </div>
+        <div class="mb-3">
+          <label for="state" class="form-label">State</label>
+          <input type="text" formControlName="state" class="form-control" id="state">
+        </div>
+        <div class="mb-3">
+          <label for="pinCode" class="form-label">Pin Code</label>
+          <input type="number" formControlName="pinCode" class="form-control" id="pinCode">
+         <div class="text-danger"><!-- texto requerido, desactivar botton de guardar mientras no completo -->
+          @if(employeeForm.controls['pinCode'].touched){
+            @if(employeeForm.controls['pinCode'].errors?.['required']){
+              <span>Min 4 pin code </span>
+            }
+            @if(employeeForm.controls['pinCode'].errors?.['minlength']){<!-- Requerido minimo de 4 -->
+
+            }
+          }
+         </div>
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" formControlName="address" class="form-control" id="address">
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button> <!-- resetear forma resetForm() classe-->
+          </div>
+          <div class="col-auto">
+            <button *ngIf="!isEditMode" type="button" class="btn btn-success" [disabled]="employeeForm.invalid" (click)="onSave()">Save Employee</button><!-- desabilitar botones mientras no valido, usar funcion onSave()-->
+            <button *ngIf="isEditMode" type="button" class="btn btn-warning" [disabled]="employeeForm.invalid" (click)="onUpdate()">Update Employee</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

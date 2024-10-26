@@ -1,0 +1,5 @@
+.carousel-item img {
+    object-fit: cover; /* cubre todo el contenedor */
+    height: 800px; /* ajustar la altura necesaria*/
+    width: 100%; /* asegura que la fig tomo toda la distancia width */
+}

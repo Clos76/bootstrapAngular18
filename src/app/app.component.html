@@ -1,33 +1,34 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Bienvenido</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <button class="btn btn-outline-success" routerLink="/home">Home</button>
-                </li>
-        <li class="nav-item">
-          <button class="btn btn-outline-success" routerLink="/products">Products</button>
+          <!-- Aplicar 'active' y 'menu-highlight' al botón de Home para mostrar pagina actual en navegacion -->
+          <button class="btn btn-outline-success" routerLink="/home" routerLinkActive="active menu-highlight">Home</button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-outline-success" routerLink="/cart">Cart</button>
-
+          <!-- Aplicar 'active' y 'menu-highlight' al botón de Products para mostrar pagina actual en navegacion  -->
+          <button class="btn btn-outline-success" routerLink="/products" routerLinkActive="active menu-highlight">Products</button>
+        </li>
+        <li class="nav-item">
+          <!-- Aplicar 'active' y 'menu-highlight' al botón de Usuarios para mostrar pagina actual en navegacion -->
+          <button class="btn btn-outline-success" routerLink="/cart" routerLinkActive="active menu-highlight">Usuarios</button>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Acciones</a></li>
+            <li><a class="dropdown-item" href="#">Bootstrap</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Enlaces</a></li>
           </ul>
         </li>
-        
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -36,8 +37,6 @@
     </div>
   </div>
 </nav>
-
-
 
 
 

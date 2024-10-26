@@ -1,16 +1,66 @@
 <div class="text-center">
-    <h1>{{title}}</h1>
-    <p>Congratulations! Your first Angular-18 application is running. </p>
-    <button class="btn btn-danger">Bootstrap Button</button>
-    <p></p>
-    <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-light">Light</button>
-  <button type="button" class="btn btn-dark">Dark</button>
-  
-  <button type="button" class="btn btn-link">Link</button>
+    <div class="alert alert-info text-center my-5">
+      <h1>{{title}}</h1>
+      <p>Estos son los botones y colores en bootstrap</p>
+     
+      <p></p>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+    </div>
   </div>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+      <title>Ejemplo de Carusel</title>
+      <style>
+          .carousel-image {
+              object-fit: cover; /* asegurar que figuaras cubren el area */
+              height: 800px; /* altura de fotos */
+          }
+      </style>
+  </head>
+  <body>
+    <!-- para las imagenes tienen que tener todo los datos no simplemente el URL-->
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- para las imagenes tienen que tener todo los datos no simplemente el URL-->
+            <img src="https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 carousel-image" alt="Bionic hand and human hand">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/8728382/pexels-photo-8728382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 carousel-image" alt="Woman using virtual goggles">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/8438979/pexels-photo-8438979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 carousel-image" alt="Robot holding a flower">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 carousel-image" alt="Black headset on condenser microphone">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100 carousel-image" alt="Prosthetic arm on blue background">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
+
